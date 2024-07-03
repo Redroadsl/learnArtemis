@@ -1,0 +1,23 @@
+// 基础代码快速入门
+//(两个左斜杠后面的内容是注释)
+// 火箭预备部分
+[lyc id=0 color=000000 width=1920 height=1080] //创建黑色背景
+[lyc id=1 file="space"] //导入图片图层
+[lyc id=2 file="rocket"]
+[lyprop id=2 left=100 top=500 xscale=10 yscale=10 rotate=45] //设置火箭大小位置和旋转
+[flip] //刷新显示
+[@] //等待用户操作
+// 发射火箭动画
+[lytween id=2 param=left from=100 to=1500 time=2000] //移动动画
+[lytween id=2 param=top from=500 to=0 ease=easeout_cubic time=2000] //使用缓动函数模拟火箭发射弧形
+[lytween id=2 param=xscale from=10 to=80 time=2000] //放大动画
+[lytween id=2 param=yscale from=10 to=80 time=2000]
+[lytween id=2 param=rotate from=45 to=120 time=2000] //旋转角度动画
+// 多媒体
+[wait time=1000] //等待时间
+[seplay id="se1" file="xiu"] //播放声音效果
+[wait se="se1"] //等待音效播放完毕
+[splay file="mikuv4_eng" loop=1] //循环播放bgm
+//[video id="v1" file="video.mp4"] //视频无法播放。暂不演示。
+[@]
+// 恭喜完成火箭发射任务！
